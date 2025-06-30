@@ -1,0 +1,164 @@
+/* ===== RESPONSIVIDADE - TELAS ATÉ 1200px ===== */
+@media (max-width: 1200px) {
+    .carousel-container {
+        height: 450px; /* Reduz a altura do carrossel */
+    }
+    
+    .produto-info h3 {
+        font-size: 1.1rem; /* Reduz o tamanho do título do produto */
+    }
+    
+    .preco {
+        font-size: 1.3rem; /* Reduz o tamanho do preço */
+    }
+}
+
+/* ===== RESPONSIVIDADE - TELAS ATÉ 992px ===== */
+@media (max-width: 992px) {
+    .carousel-container {
+        max-width: 500px; /* Limita a largura máxima */
+        height: 400px; /* Reduz ainda mais a altura */
+    }
+    
+    .produto-item {
+        padding: 20px; /* Reduz o espaçamento interno */
+    }
+    
+    .btn-comprar {
+        padding: 10px 20px; /* Ajusta o tamanho do botão */
+        font-size: 0.9rem; /* Reduz a fonte do botão */
+    }
+}
+
+/* ===== RESPONSIVIDADE - TELAS ATÉ 768px (TABLETS) ===== */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 380px; /* Ajuste de altura */
+        width: 95%; /* Ocupa quase toda a largura */
+        height: auto; /* Altura automática */
+    }
+    
+    .produto-item img {
+        height: 55%; /* Reduz espaço da imagem */
+    }
+    
+    .produto-info {
+        padding: 12px; /* Reduz espaçamento */
+    }
+    
+    .carousel-control {
+        width: 40px; /* Controles menores */
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .carousel-indicators {
+        bottom: 70px; /* Ajusta posição */
+    }
+    
+    /* Transforma menu lateral em barra inferior */
+    .menu-categorias {
+        width: 100%; /* Ocupa largura total */
+        flex-direction: row; /* Disposição horizontal */
+        justify-content: space-around; /* Espaçamento uniforme */
+        padding: 30px; /* Espaçamento interno */
+        top: auto; /* Remove posição top */
+        bottom: 0; /* Fixa na base */
+        min-height: auto; /* Altura automática */
+        background: linear-gradient(to bottom, #01182e, #06648B); /* Fundo mais opaco */
+    }
+    
+    .menu-categorias .menu-item {
+        width: 60px; /* Itens menores */
+        height: 60px;
+        margin: 0 5px; /* Espaçamento entre itens */
+    }
+    
+    .menu-categorias .menu-item img {
+        width: 80px; /* Ajuste de tamanho */
+        height: 80px;
+    }
+    
+    .menu-categorias .menu-item span {
+        font-size: 10px; /* Texto menor */
+    }
+}
+
+/* ===== RESPONSIVIDADE - TELAS ATÉ 576px (CELULARES GRANDES) ===== */
+@media (max-width: 576px) {
+    .carousel-container {
+        height: 350px; /* Altura reduzida */
+    }
+    
+    .produto-item {
+        padding: 15px; /* Menos espaçamento */
+    }
+    
+    .produto-info h3 {
+        font-size: 1rem; /* Fonte menor */
+    }
+    
+    .preco {
+        font-size: 1.1rem; /* Fonte menor */
+    }
+    
+    .btn-comprar {
+        padding: 8px 15px; /* Botão mais compacto */
+        font-size: 0.8rem; /* Texto menor */
+        max-width: 160px; /* Largura máxima */
+    }
+    
+    .carousel-control {
+        width: 35px; /* Controles ainda menores */
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .carousel-indicator {
+        width: 8px; /* Indicadores menores */
+        height: 8px;
+    }
+    
+    /* Ajustes na logo para mobile */
+    .logo .c {
+        font-size: 250px; /* Redução do tamanho */
+        left: 80px; /* Reposicionamento */
+        top: -50px; /* Movimento para cima */
+    }
+    
+    .logo .k {
+        font-size: 200px; /* Redução do tamanho */
+        left: 170px; /* Reposicionamento */
+        top: -22px; /* Movimento para cima */
+    }
+    
+    .slogan {
+        font-size: 35px; /* Redução do tamanho */
+        top: 70px; /* Movimento para cima */
+    }
+}
+
+/* ===== RESPONSIVIDADE - TELAS ATÉ 400px (CELULARES PEQUENOS) ===== */
+@media (max-width: 400px) {
+    .carousel-container {
+        height: 320px; /* Altura mínima */
+    }
+    
+    .produto-item img {
+        height: 50%; /* Imagem ocupa menos espaço */
+    }
+    
+    .produto-info {
+        padding: 10px; /* Espaçamento mínimo */
+    }
+    
+    .menu-categorias .menu-item {
+        width: 50px; /* Itens ainda menores */
+        height: 50px;
+    }
+    
+    .menu-categorias .menu-item img {
+        width: 30px; /* Ícones muito pequenos */
+        height: 30px;
+    }
+}

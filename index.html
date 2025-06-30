@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CK Calçados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+</head>
+
+<body>
+    <main class="categorias">
+        <!-- Banner Principal -->
+        <div class="categoria selecionado">
+            <picture>
+					<source srcset="./src/imagens/banner-principal-desktop.png" media="(min-width: 768px)">
+					<img class="imagem" src="./src/imagens/banner-principal-mobile.png" alt="CK Calçados - Calçados de Qualidade">	
+            </picture>
+            
+            <div class="conteudo">
+                <div class="logo">
+                    <div class="letreiro">
+                        <div class="c gradiente-txt">C</div>
+                        <div class="k gradiente-txt">K</div>
+                        <div class="slogan gradiente-txt">
+                            Calçados Masculino e Feminino
+                        </div>					
+                    </div>
+                </div>            
+            </div>
+        </div>
+        
+        <!-- Seção Feminino -->
+        <div class="categoria feminino">
+            <picture>
+                <source srcset="./src/imagens/bg-feminino-desktop.png" media="(min-width: 768px)" />
+                <img class="imagem" src="./src/imagens/bg-feminino-mobile.png" alt="Calçados Femininos" />
+            </picture>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisF6.png" alt="Tênis Feminino Modelo 25">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="2">
+                            <img src="./src/imagens/tenisF4.png" alt="Tênis Feminino Modelo 18">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisF1.png" alt="Tênis Feminino Modelo 25">
+                            <div class="produto-info">
+                                <h3>Tênis Feminino, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="2">
+                            <img src="./src/imagens/tenisF3.png" alt="Tênis Feminino Modelo 18">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisF5.png" alt="Tênis Feminino Modelo 25">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="2">
+                            <img src="./src/imagens/tenisF8.png" alt="Tênis Feminino Modelo 18">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisF7.png" alt="Tênis Feminino Modelo 25">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="2">
+                            <img src="./src/imagens/tenisF10.png" alt="Tênis Feminino Modelo 18">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisF9.png" alt="Tênis Feminino Modelo 25">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                     </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" aria-label="Anterior">↑</button>
+                        <button class="carousel-control next" aria-label="Próximo">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seção Masculino -->
+        <div class="categoria masculino">
+            <picture>
+                <source srcset="./src/imagens/bg-masculino-desktop.png" media="(min-width: 768px)" />
+                <img class="imagem" src="./src/imagens/bg-masculino-mobile.png" alt="Calçados Masculinos" />
+            </picture>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM22.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM2.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM3.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM1.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM11.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM21.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM29.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM14.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM13.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM12.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM17.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM27.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM26.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM28.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenis30.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM5.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM6.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM7.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM9.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM10.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM18.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM19.png" alt="Tênis Masculino Modelo 16">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" aria-label="Anterior">↑</button>
+                        <button class="carousel-control next" aria-label="Próximo">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seção Infantil -->
+        <div class="categoria infantil">
+            <picture>
+                <source srcset="./src/imagens/bg-infantil-desktop.png" media="(min-width: 768px)" />
+                <img class="imagem" src="./src/imagens/bg-infantil-mobile.png" alt="Calçados Infantis" />
+            </picture>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI1.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI2.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI3.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI4.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI6.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisI7.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						 <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/tenisM22.png" alt="Tênis Infantil Modelo 19">
+                            <div class="produto-info">
+                                <h3>Tênis, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" aria-label="Anterior">↑</button>
+                        <button class="carousel-control next" aria-label="Próximo">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Sandálias -->
+        <div class="categoria sandalias">
+            <picture>
+                <source srcset="./src/imagens/bg-sandalias-desktop.png" media="(min-width: 768px)" />
+                <img class="imagem" src="./src/imagens/bg-sandalias-mobile.png" alt="Sandálias" />
+            </picture>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="produto-item" data-item="1">
+                            <img src="./src/imagens/Sandalia1.png" alt="Sandália Modelo 1">
+                            <div class="produto-info">
+                                <h3>Sandália, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/Sandalia3.png" alt="Sandália Modelo 1">
+                            <div class="produto-info">
+                                <h3>Sandália, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/Sandalia4.png" alt="Sandália Modelo 1">
+                            <div class="produto-info">
+                                <h3>Sandália, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+						<div class="produto-item" data-item="1">
+                            <img src="./src/imagens/Sandalia2.png" alt="Sandália Modelo 1">
+                            <div class="produto-info">
+                                <h3>Sandália, a partir de</h3>
+                                <p class="preco">R$ 55,00</p>
+                                <button class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" aria-label="Anterior">↑</button>
+                        <button class="carousel-control next" aria-label="Próximo">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Menu de Navegação -->
+    <ul class="menu-categorias">
+        <li>
+            <button class="menu-item home selecionado">
+                <img src="./src/imagens/icone-home.png" alt="Início">
+                <span></span>
+            </button>
+        </li>
+        <li>
+            <button class="menu-item feminino">
+                <img src="./src/imagens/icone-feminino.png" alt="Feminino" />
+                <span></span>
+            </button>
+        </li>
+        <li>
+            <button class="menu-item masculino">
+                <img src="./src/imagens/icone-masculino.png" alt="Masculino" />
+                <span></span>
+            </button>
+        </li>
+        <li>
+            <button class="menu-item infantil">
+                <img src="./src/imagens/icone-infantil.png" alt="Infantil" />
+                <span></span>
+            </button>
+        </li>
+        <li>
+            <button class="menu-item sandalias">
+                <img src="./src/imagens/icone-sandalias.png" alt="Sandálias" />
+                <span></span>
+            </button>
+        </li>
+    </ul>
+    
+    <footer class="rodape">
+        <div class="social-icons">
+            <a href="https://wa.me/message/KSIZZ5EVZR6OJ1" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/calcado.ck?igsh=ajFpM3RmeGptM2lz&utm_source=qr" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@ck.calados?_t=ZM-8w07S2M5mWD&_r=1" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="./src/imagens/tictoc.png" alt="TikTok">
+            </a>
+            <a href="https://www.google.com/maps?q=endereco+completo" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="./src/imagens/local.png" alt="Localização">
+            </a>
+            <a href="https://www.glef.com.br" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="./src/imagens/site.png" alt="Website">
+            </a>
+        </div>
+        <div class="informacoes">
+            <p>Fale conosco e nos siga nas redes sociais</p>		
+            <p>Endereço Rua Professor Antônio Giulesse, Nº 379, Alvorada II, Manaus/AM</p>
+            <p>Horário de funcionamento: Seg-Sáb 9h-18h</p>
+        </div>
+        <p class="creditos">
+            © 2025 Gabriel Dantas | Todos os direitos reservados (92)98480-1522.
+        </p>
+    </footer>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* ===== CARROSSEL DE PRODUTOS - ESTILOS ESPECÍFICOS ===== */
+
+/* Container principal do carrossel */
+.carousel-container {
+    width: 90%; /* Largura relativa à tela */
+    max-width: 600px; /* Largura máxima */
+    height: 500px; /* Altura fixa */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    border-radius: 15px; /* Bordas arredondadas */
+    background: rgba(255, 255, 255, 0.1); /* branco - Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Sombra */
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* branco - Borda sutil */
+}
+
+/* Área que contém os itens do carrossel */
+.carousel {
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Itens em coluna */
+    height: 100%; /* Ocupa toda altura do container */
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animação suave */
+}
+
+/* Estilo de cada item de produto */
+.produto-item {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    flex-shrink: 0; /* Não reduz tamanho */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Organização em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: space-between; /* Espaço entre elementos */
+    padding: 25px; /* Espaçamento interno */
+    box-sizing: border-box; /* Padding não aumenta tamanho */
+}
+
+/* Estilo da imagem do produto */
+.produto-item img {
+    width: 100%; /* Largura total */
+    height: 60%; /* Altura relativa */
+    object-fit: contain; /* Mantém proporção da imagem */
+    transition: transform 0.3s ease; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse na imagem */
+.produto-item:hover img {
+    transform: scale(1.05); /* Aumenta levemente */
+}
+
+/* Área de informações do produto */
+.produto-info {
+    text-align: center; /* Texto centralizado */
+    width: 100%; /* Largura total */
+    padding: 15px; /* Espaçamento interno */
+    background: rgba(0, 0, 0, 0.6); /* Preto 60% - Fundo semi-transparente */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Título do produto */
+.produto-info h3 {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    margin-bottom: 10px; /* Espaço abaixo */
+    color: #fff; /* Cor branca */
+}
+
+/* Preço do produto */
+.preco {
+    font-size: 1.5rem; /* Tamanho maior */
+    font-weight: bold; /* Negrito */
+    color: #ffcc00; /* Cor amarela */
+    margin-bottom: 15px; /* Espaço abaixo */
+    display: block; /* Exibe como bloco */
+}
+
+/* Botão de compra */
+.btn-comprar {
+    background: linear-gradient(135deg, var(--accent), var(--roxo-profundo)); /* Gradiente */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 12px 25px; /* Espaçamento interno */
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 1rem; /* Tamanho da fonte */
+    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 15px rgba(127, 79, 223, 0.3); /* Sombra */
+    width: 80%; /* Largura relativa */
+    max-width: 200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-comprar:hover {
+    background: linear-gradient(135deg, var(--roxo-profundo), var(--accent)); /* Inverte gradiente */
+    transform: translateY(-2px); /* Levanta levemente */
+    box-shadow: 0 6px 20px rgba(127, 79, 223, 0.4); /* Aumenta sombra */
+}
+
+/* Controles de navegação (setas) */
+.carousel-controls {
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 20px; /* Distância do fundo */
+    left: 0; /* Alinhado à esquerda */
+    right: 0; /* Alinhado à direita */
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre elementos */
+    z-index: 30; /* Camada superior */
+}
+
+/* Estilo dos botões de controle */
+.carousel-control {
+    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    border: none; /* Sem borda */
+    border-radius: 50%; /* Formato circular */
+    width: 100px; /* Largura fixa */
+    height: 100px; /* Altura fixa */
+    cursor: pointer; /* Cursor de clique */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: all 0.3s; /* Transição suave */
+    color: var(--roxo-profundo); /* Cor do ícone */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efeito ao passar o mouse nos controles */
+.carousel-control:hover {
+    background: white; /* Fundo branco */
+    transform: scale(1.1); /* Aumenta levemente */
+}
+
+/* Indicadores de posição (bolinhas) */
+.carousel-indicators {
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 80px; /* Distância do fundo */
+    left: 0; /* Alinhado à esquerda */
+    right: 0; /* Alinhado à direita */
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaço entre elementos */
+    z-index: 30; /* Camada superior */
+}
+
+/* Estilo de cada indicador */
+.carousel-indicator {
+    width: 12px; /* Largura fixa */
+    height: 12px; /* Altura fixa */
+    border-radius: 50%; /* Formato circular */
+    background: rgba(255, 255, 255, 0.5); /* Cor semi-transparente */
+    cursor: pointer; /* Cursor de clique */
+    transition: all 0.3s; /* Transição suave */
+}
+
+/* Estilo do indicador ativo */
+.carousel-indicator.active {
+    background: white; /* Cor branca */
+    transform: scale(1.2); /* Aumenta levemente */
+}

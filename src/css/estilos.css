@@ -1,0 +1,384 @@
+/* ===== VARIÁVEIS DE CORES ===== */
+:root {
+    --primary: #463296;         /* Roxo primário */
+    --secondary: #505050;       /* Cinza secundário */
+    --accent: #7f4fdf;         /* Roxo de destaque */
+    --text-stroke: rgba(70, 50, 150, 0.9); /* Cor da borda do texto */
+    --azul-escuro: #1a1a72;    /* Azul escuro */
+    --roxo-profundo: #4b0082;   /* Roxo profundo */
+    --preto-fosco: #1a1a1a;     /* Preto fosco */
+    --preto-acetinado: #2d2d2d; /* Preto acetinado */
+}
+
+/* ===== ESTILOS GERAIS ===== */
+body {
+    background-color: #000000;  /* Fundo preto */
+    overflow: hidden;           /* Esconde barras de rolagem */
+    font-family: "Open Sans", sans-serif; /* Fonte principal */
+    margin: 0;                  /* Remove margens padrão */
+    padding: 0;                 /* Remove paddings padrão */
+    position: relative;         /* Permite posicionamento absoluto dos filhos */
+    min-height: 100vh;          /* Altura mínima da tela inteira */
+}
+
+/* ===== EFEITO DE GRADIENTE NO FUNDO ===== */
+main::after {
+    content: "";                /* Pseudoelemento necessário */
+    position: fixed;            /* Fixo na tela */
+    top: 0;                     /* Alinhado ao topo */
+    left: 0;                    /* Alinhado à esquerda */
+    min-height: 100vh;          /* Altura total da tela */
+    width: 0vh;                 /* Largura inicial zero */
+    background: linear-gradient(92deg, #000 25%, rgba(0, 0, 0, 0) 75%) no-repeat; /* Gradiente horizontal */
+}
+
+/* ===== CATEGORIAS ===== */
+main .categoria {
+    display: none;              /* Esconde por padrão */
+    height: 100vh;              /* Altura total da tela */
+    position: fixed;            /* Fixo na tela */
+    top: 0;                     /* Alinhado ao topo */
+    left: 0;                    /* Alinhado à esquerda */
+    width: 100%;                /* Largura total */
+    height: 100%;               /* Altura total */
+    z-index: 1;                 /* Camada de posicionamento */
+}
+
+/* Categoria visível */
+main .categoria.selecionado {
+    display: block;             /* Mostra quando selecionado */
+}
+
+/* Imagem de fundo da categoria */
+main .categoria .imagem {
+    width: 100%;                /* Largura total */
+    height: 100%;               /* Altura total */
+    object-fit: cover;          /* Cobrir todo o espaço mantendo proporção */
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+    position: absolute;         /* Posicionamento absoluto */
+    top: 0;                     /* Alinhado ao topo */
+    left: 0;                    /* Alinhado à esquerda */
+    right: 0;                   /* Alinhado à direita */
+    margin: 0 auto;             /* Centraliza horizontalmente */
+    display: flex;              /* Layout flexível */
+    flex-direction: column;     /* Organização em coluna */
+    justify-content: center;    /* Centraliza verticalmente */
+    align-items: center;        /* Centraliza horizontalmente */
+    height: 100vh;              /* Altura total da tela */
+    width: 100%;                /* Largura total */
+    max-width: 380px;           /* Largura máxima */
+    z-index: 1;                 /* Camada de posicionamento */
+}
+
+/* ===== LOGO ANIMADA ===== */
+.logo {
+    position: relative;         /* Permite posicionamento absoluto dos filhos */
+    width: 400px;              /* Largura fixa */
+    height: 400px;             /* Altura fixa */
+    display: flex;             /* Layout flexível */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    margin-bottom: 20px;       /* Espaço abaixo */
+}
+
+/* Texto com gradiente animado */
+.gradiente-txt {
+    font-weight: bold;         /* Texto em negrito */
+    background: linear-gradient( /* Gradiente de cores */
+        90deg,
+        var(--primary),
+        var(--azul-escuro),
+        var(--roxo-profundo),
+        var(--secondary),
+        var(--accent),
+        var(--primary)
+    );
+    background-size: 300% 300%; /* Tamanho do gradiente */
+    -webkit-background-clip: text; /* Aplica gradiente apenas ao texto */
+    background-clip: text;      /* Aplica gradiente apenas ao texto */
+    color: transparent;         /* Texto transparente para mostrar gradiente */
+    animation: gradienteAnimation 5s ease infinite; /* Animação contínua */
+    position: absolute;         /* Posicionamento absoluto */
+    -webkit-text-stroke: 2px var(--text-stroke); /* Borda no texto */
+    text-stroke: 2px var(--text-stroke); /* Borda no texto */
+}
+
+/* Letra "C" da logo */
+.logo .c {
+    font-size: 290px;          /* Tamanho grande */
+    font-weight: 100;          /* Peso fino */
+    line-height: 1;            /* Espaçamento de linha */
+    left: 80px;                /* Posição à esquerda */
+    top: -30px;                /* Posição acima */
+}
+
+/* Letra "K" da logo */
+.logo .k {
+    font-size: 230px;          /* Tamanho grande */
+    font-weight: 100;          /* Peso fino */
+    line-height: 1;            /* Espaçamento de linha */
+    left: 170px;               /* Posição à esquerda */
+    top: 3px;                  /* Posição abaixo */
+}
+
+/* Slogan abaixo da logo */
+.slogan {
+    display: block;            /* Exibe como bloco */
+    font-size: 40px;           /* Tamanho grande */
+    width: 100%;               /* Largura total */
+    text-align: center;        /* Texto centralizado */
+    margin-top: 0;             /* Remove margem superior */
+    position: relative;        /* Permite z-index */
+    z-index: 2;                /* Camada acima */
+    line-height: 1.2;          /* Espaçamento de linha */
+    top: 80px;                 /* Posição abaixo */
+}
+
+/* Animação do gradiente */
+@keyframes gradienteAnimation {
+    0% { background-position: 0% 50%; } /* Posição inicial */
+    50% { background-position: 100% 50%; } /* Posição intermediária */
+    100% { background-position: 0% 50%; } /* Volta à posição inicial */
+}
+
+/* ===== MENU LATERAL DE CATEGORIAS ===== */
+.menu-categorias {
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    position: fixed;            /* Fixo na tela */
+    top: 0;                     /* Alinhado ao topo */
+    right: 0;                   /* Alinhado à direita */
+    width: 180px;               /* Largura fixa */
+    display: flex;              /* Layout flexível */
+    flex-direction: column;     /* Organização em coluna */
+    align-items: center;        /* Centraliza horizontalmente */
+    justify-content: center;    /* Centraliza verticalmente */
+    min-height: 100vh;         /* Altura total da tela */
+    gap: 16px;                 /* Espaço entre itens */
+    z-index: 10;               /* Camada alta */
+}
+
+/* Itens do menu */
+.menu-categorias .menu-item {
+    border: none;               /* Sem borda */
+    background-color: #000000;  /* Fundo preto */
+    width: 90px;               /* Largura fixa */
+    height: 90px;              /* Altura fixa */
+    cursor: pointer;           /* Cursor de clique */
+    transition: transform 0.5s ease; /* Animação suave */
+    border-radius: 50%;        /* Formato circular */
+    display: flex;             /* Layout flexível */
+    flex-direction: column;    /* Organização em coluna */
+    align-items: center;       /* Centraliza horizontalmente */
+    justify-content: center;   /* Centraliza verticalmente */
+    color: white;              /* Texto branco */
+    text-decoration: none;     /* Remove sublinhado */
+    font-size: 12px;           /* Tamanho pequeno */
+}
+
+/* Imagens dos itens do menu */
+.menu-categorias .menu-item img {
+    border-radius: 50%;        /* Formato circular */
+    width: 87px;               /* Largura quase total */
+    height: 87px;              /* Altura quase total */
+    object-fit: cover;         /* Cobrir todo o espaço */
+    margin-bottom: 0px;        /* Remove espaço abaixo */
+}
+
+/* Item selecionado */
+.menu-categorias .menu-item.selecionado {
+    transform: scale(1.2);     /* Aumenta tamanho */
+    box-shadow: 0 0 10px #d9d9d9; /* Sombra branca */
+}
+
+/* Estilos específicos para cada categoria selecionada */
+.menu-categorias .menu-item.home.selecionado {
+    box-shadow: 0 0 10px #47ffc5; /* Sombra verde-água */
+}
+
+.menu-categorias .menu-item.feminino.selecionado {
+    box-shadow: 0 0 10px #9747ff; /* Sombra roxa */
+}
+
+.menu-categorias .menu-item.masculino.selecionado {
+    box-shadow: 0 0 10px #ffa947; /* Sombra laranja */
+}
+
+.menu-categorias .menu-item.infantil.selecionado {
+    box-shadow: 0 0 10px #e4309a; /* Sombra rosa */
+}
+
+.menu-categorias .menu-item.sandalias.selecionado {
+    box-shadow: 0 0 10px #fff047; /* Sombra amarela */
+}
+
+/* ===== CARROSSEL DE PRODUTOS ===== */
+.carousel-wrapper {
+    position: fixed;            /* Fixo na tela */
+    top: 50%;                  /* Centralizado verticalmente */
+    left: 50%;                 /* Centralizado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino do centro */
+    width: 100%;               /* Largura total */
+    z-index: 20;               /* Camada muito alta */
+    display: flex;             /* Layout flexível */
+    justify-content: center;   /* Centraliza horizontalmente */
+    pointer-events: none;      /* Permite clicar através */
+}
+
+.carousel-container {
+    width: 80%;                /* Largura relativa */
+    max-width: 500px;          /* Largura máxima */
+    height: 400px;             /* Altura fixa */
+    overflow: hidden;          /* Esconde conteúdo que ultrapassa */
+    border-radius: 10px;       /* Bordas arredondadas */
+    background: linear-gradient(
+		to bottom,
+		rgba(135, 206, 235, 0.8),    /* #87CEEB com 60% opacidade */
+		rgba(74, 143, 231, 0.8),     /* #4a8fe7 com 60% opacidade */
+		rgba(10, 26, 58, 0.8),       /* #0a1a3a com 60% opacidade */
+		rgba(26, 58, 110, 0.8)       /* #1a3a6e com 60% opacidade */
+	);; /* Fundo dos produtos semi-transparente */
+    position: relative;        /* Permite posicionamento absoluto dos filhos */
+    pointer-events: auto;      /* Permite interação */
+}
+
+.carousel {
+    display: flex;             /* Layout flexível */
+    flex-direction: column;    /* Organização em coluna */
+    height: auto;             /* Altura automática */
+    transition: transform 0.5s ease-in-out; /* Animação suave */
+    will-change: transform;   /* Otimização de performance */
+}
+
+.produto-item {
+    width: 100%;               /* Largura total */
+    height: 400px;             /* Altura fixa */
+    flex-shrink: 0;            /* Não reduz tamanho */
+    display: flex;             /* Layout flexível */
+    flex-direction: column;    /* Organização em coluna */
+    align-items: center;       /* Centraliza horizontalmente */
+    justify-content: center;   /* Centraliza verticalmente */
+    padding: 20px;             /* Espaçamento interno */
+}
+
+.produto-item img {
+    width: 100%;               /* Largura total */
+    height: 70%;               /* Altura relativa */
+    object-fit: contain;       /* Mantém proporção */
+    display: block;            /* Exibe como bloco */
+}
+
+.produto-info {
+    text-align: center;        /* Texto centralizado */
+    margin-top: 15px;          /* Espaço acima */
+    color: white;              /* Texto branco */
+}
+
+.produto-info h3 {
+    font-size: 18px;           /* Tamanho médio */
+    margin-bottom: 10px;       /* Espaço abaixo */
+}
+
+.preco {
+    font-size: 22px;           /* Tamanho grande */
+    font-weight: bold;         /* Texto em negrito */
+    color: #ffcc00;            /* Cor amarela */
+    margin-bottom: 15px;       /* Espaço abaixo */
+}
+
+.btn-comprar {
+    background-color: var(--accent); /* Cor de destaque */
+    color: white;              /* Texto branco */
+    border: none;              /* Sem borda */
+    padding: 10px 20px;        /* Espaçamento interno */
+    border-radius: 5px;        /* Bordas levemente arredondadas */
+    cursor: pointer;           /* Cursor de clique */
+    font-weight: bold;         /* Texto em negrito */
+    transition: background-color 0.5s; /* Transição suave */
+}
+
+.btn-comprar:hover {
+    background-color: var(--roxo-profundo); /* Cor mais escura ao passar mouse */
+}
+
+.carousel-controls {
+    position: absolute;        /* Posicionamento absoluto */
+    bottom: 20px;              /* Distância do fundo */
+    left: 0;                   /* Alinhado à esquerda */
+    right: 0;                  /* Alinhado à direita */
+    display: flex;             /* Layout flexível */
+    justify-content: center;   /* Centraliza horizontalmente */
+    gap: 20px;                 /* Espaço entre elementos */
+    z-index: 30;               /* Camada muito alta */
+    gap: 110px                 /* Espaço maior entre controles */
+}
+
+.carousel-control {
+    background: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+    border: none;              /* Sem borda */
+    border-radius: 50%;        /* Formato circular */
+    width: 40px;               /* Largura fixa */
+    height: 40px;              /* Altura fixa */
+    cursor: pointer;           /* Cursor de clique */
+    display: flex;             /* Layout flexível */
+    align-items: center;       /* Centraliza verticalmente */
+    justify-content: center;   /* Centraliza horizontalmente */
+    font-size: 20px;           /* Tamanho do ícone */
+    transition: all 0.5s;      /* Transição suave */
+}
+
+.carousel-control:hover {
+    background: rgba(255, 255, 255, 0.9); /* Fundo mais visível ao passar mouse */
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+    font-weight: bold;         /* Texto em negrito */
+    font-size: 12px;           /* Tamanho médio */
+    background: linear-gradient( /* Gradiente de cores */
+        90deg,
+        var(--primary),
+        var(--azul-escuro),
+        var(--roxo-profundo),
+        var(--secondary),
+        var(--accent),
+        var(--primary)
+    );
+    background-size: 50% 50%;  /* Tamanho do gradiente */
+    -webkit-background-clip: text; /* Aplica gradiente apenas ao texto */
+    background-clip: text;      /* Aplica gradiente apenas ao texto */
+    color: transparent;         /* Texto transparente para mostrar gradiente */
+    animation: gradienteAnimation 2s ease infinite; /* Animação mais rápida */
+    position: fixed;            /* Fixo na tela */
+    bottom: -150px;             /* Escondido inicialmente */
+    left: 0;                    /* Alinhado à esquerda */
+    width: 100%;                /* Largura total */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 15px 0;            /* Espaçamento interno */
+    text-align: center;         /* Texto centralizado */
+    transition: bottom 0.4s ease, opacity 0.5s ease; /* Animações suaves */
+    z-index: 40;                /* Camada altíssima */
+    opacity: 0;                 /* Invisível inicialmente */
+}
+
+/* Mostra o rodapé quando a classe é adicionada */
+body.show-rodape .rodape {
+    bottom: 0;                  /* Mostra na parte inferior */
+    opacity: 1;                 /* Torna visível */
+}
+
+/* Ícones sociais */
+.social-icons {
+    display: flex;             /* Layout flexível */
+    justify-content: center;   /* Centraliza horizontalmente */
+    gap: 20px;                 /* Espaço entre ícones */
+    margin-bottom: 15px;       /* Espaço abaixo */
+}
+
+.social-icon img {
+    width: 40px;               /* Largura fixa */
+    height: 40px;              /* Altura fixa */
+    transition: transform 0.5s ease; /* Animação suave */
+}
