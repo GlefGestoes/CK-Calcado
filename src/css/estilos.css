@@ -227,28 +227,42 @@ main .categoria .imagem {
     pointer-events: none;      /* Permite clicar através */
 }
 
+@keyframes waveEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .carousel-container {
-    width: 80%;                /* Largura relativa */
-    max-width: 500px;          /* Largura máxima */
-    height: 400px;             /* Altura fixa */
-    overflow: hidden;          /* Esconde conteúdo que ultrapassa */
-    border-radius: 10px;       /* Bordas arredondadas */
+    width: 80%;
+    max-width: 500px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
     background: linear-gradient(
-		to bottom,
-		rgba(135, 206, 235, 0.8),    /* #87CEEB com 60% opacidade */
-		rgba(74, 143, 231, 0.8),     /* #4a8fe7 com 60% opacidade */
-		rgba(10, 26, 58, 0.8),       /* #0a1a3a com 60% opacidade */
-		rgba(26, 58, 110, 0.8)       /* #1a3a6e com 60% opacidade */
-	);; /* Fundo dos produtos semi-transparente */
-    position: relative;        /* Permite posicionamento absoluto dos filhos */
-    pointer-events: auto;      /* Permite interação */
+        45deg,
+        rgba(135, 206, 235, 0.8),
+        rgba(74, 143, 231, 0.8),
+        rgba(10, 26, 58, 0.8),
+        rgba(26, 58, 110, 0.8)
+    );
+    background-size: 200% 200%;
+    animation: waveEffect 8s ease infinite;
+    position: relative;
+    pointer-events: auto;
 }
 
 .carousel {
     display: flex;             /* Layout flexível */
     flex-direction: column;    /* Organização em coluna */
     height: auto;             /* Altura automática */
-    transition: transform 0.5s ease-in-out; /* Animação suave */
+    transition: transform 0.2s ease-in-out; /* Animação suave */
     will-change: transform;   /* Otimização de performance */
 }
 
