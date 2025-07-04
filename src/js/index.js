@@ -214,3 +214,43 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
         alert(`Você adicionou ${produto} no valor de ${preco} ao carrinho!`);
     });
 });
+
+// Script da música
+
+const audio = document.getElementById('bgMusic');
+let audioStarted = false;
+
+function startAudio() {
+    if (audioStarted) return;
+    
+    audio.play()
+        .then(() => {
+            audioStarted = true;
+            console.log("Música iniciada!");
+        })
+        .catch(error => console.log("Erro ao reproduzir:", error));
+}
+
+// Captura cliques em QUALQUER elemento (incluindo botões do menu)
+document.addEventListener('click', (event) => {
+    // Verifica se o clique foi em um elemento interativo (exceto scripts/meta)
+    const isInteractiveElement = (
+        event.target.tagName !== 'SCRIPT' && 
+        event.target.tagName !== 'META' &&
+        !event.target.classList.contains('evitar-audio') // Classe opcional para exceções
+    );
+
+    if (isInteractiveElement) {
+        startAudio();
+    }
+}, { once: true }); // Executa apenas uma vez
+
+// Alternativa para mobile (toque na tela)
+document.addEventListener('touchstart', startAudio, { once: true, passive: true });
+
+document.querySelectorAll('.menu-categorias button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Seu código existente...
+        startAudio(); // Garante que o áudio toque
+    });
+});
