@@ -141,24 +141,127 @@
 /* ===== RESPONSIVIDADE - TELAS ATÉ 400px (CELULARES PEQUENOS) ===== */
 @media (max-width: 400px) {
     .carousel-container {
-        height: 320px; /* Altura mínima */
+        height: 320px;
+        width: 95%; /* Garante que não ultrapasse a tela */
+        margin: 0 auto; /* Centraliza */
+    }
+    
+    .produto-item {
+        height: 320px; /* Ajusta a altura do item */
+        padding: 10px;
     }
     
     .produto-item img {
-        height: 50%; /* Imagem ocupa menos espaço */
+        height: 60%; /* Aumenta o espaço da imagem */
+        max-width: 100%; /* Garante que não ultrapasse */
     }
     
     .produto-info {
-        padding: 10px; /* Espaçamento mínimo */
+        padding: 5px;
+    }
+    
+    .produto-info h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
+    .preco {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .btn-comprar {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .carousel-controls {
+        bottom: 10px;
+        gap: 80px; /* Reduz o espaço entre os controles */
+    }
+    
+    .carousel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    /* Ajustes para o menu */
+    .menu-categorias {
+        padding: 10px 5px;
     }
     
     .menu-categorias .menu-item {
-        width: 50px; /* Itens ainda menores */
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        margin: 0 2px;
     }
     
     .menu-categorias .menu-item img {
-        width: 30px; /* Ícones muito pequenos */
-        height: 30px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    /* Ajustes na logo para mobile */
+    .logo {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .logo .c {
+        font-size: 180px;
+        left: 50px;
+        top: -40px;
+    }
+    
+    .logo .k {
+        font-size: 150px;
+        left: 120px;
+        top: -15px;
+    }
+    
+    .slogan {
+        font-size: 24px;
+        top: 50px;
+        width: 90%;
+    }
+}
+
+/* ===== RESPONSIVIDADE EXTREMA - TELAS ATÉ 320px ===== */
+@media (max-width: 320px) {
+    .carousel-container {
+        height: 280px;
+    }
+    
+    .produto-item {
+        height: 280px;
+    }
+    
+    .produto-item img {
+        height: 55%;
+    }
+    
+    .menu-categorias .menu-item {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .menu-categorias .menu-item img {
+        width: 33px;
+        height: 33px;
+    }
+    
+    .logo .c {
+        font-size: 150px;
+        left: 40px;
+    }
+    
+    .logo .k {
+        font-size: 120px;
+        left: 100px;
+    }
+    
+    .slogan {
+        font-size: 20px;
     }
 }
