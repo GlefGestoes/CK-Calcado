@@ -255,6 +255,7 @@ document.querySelectorAll('.menu-categorias button').forEach(button => {
     });
 });
 
+// Botão moeda - Atualizado com confirmação
 document.addEventListener('DOMContentLoaded', function() {
     const botaoSocial = document.getElementById('botaoSocial');
     const icones = document.querySelectorAll('.icone-link');
@@ -296,11 +297,24 @@ document.addEventListener('DOMContentLoaded', function() {
         startRotation();
     });
 
-    // Clique nos ícones
+    // Clique nos ícones - Atualizado com confirmação
     icones.forEach(icone => {
         icone.addEventListener('click', function(e) {
             e.preventDefault();
-            window.open(this.getAttribute('data-link'), '_blank');
+            e.stopPropagation();
+            
+            // Pega o link e o nome da rede social
+            const link = this.getAttribute('data-link');
+            const redeSocial = this.querySelector('img').alt;
+            
+            // Mostra confirmação
+            const confirmar = confirm(`Deseja entrar em contato via ${redeSocial}?`);
+            
+            if (confirmar) {
+                window.open(link, '_blank');
+            } else {
+                location.reload(); // Atualiza a página se o usuário cancelar
+            }
         });
     });
 
