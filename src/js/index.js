@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostra rodapé por 3 segundos ao carregar
     setTimeout(function() {
         showRodape();
-        setTimeout(hideRodape, 3000);
-    }, 2000);
+        setTimeout(hideRodape, 9000);
+    }, 1000);
 });
 
 // Botões de compra
