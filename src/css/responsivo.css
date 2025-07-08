@@ -265,3 +265,36 @@
         font-size: 20px;
     }
 }
+
+/* ===== ESTILO DO BLOCO DE INFORMAÇÕES DE ENDEREÇO ===== */
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .conteudo .info-loja {
+        max-width: 280px;
+        padding: 12px;
+    }
+    
+    .conteudo .info-loja p {
+        font-size: 13px;
+    }
+    
+    .conteudo .info-loja p:first-child {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo .info-loja {
+        max-width: 250px;
+        padding: 10px;
+    }
+    
+    .conteudo .info-loja p {
+        font-size: 12px;
+    }
+    
+    .conteudo .info-loja p:first-child {
+        font-size: 13px;
+    }
+}
