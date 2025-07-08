@@ -396,3 +396,36 @@ body.show-rodape .rodape {
     height: 40px;              /* Altura fixa */
     transition: transform 0.5s ease; /* Animação suave */
 }
+
+/* ===== ESTILO DO BLOCO DE INFORMAÇÕES DE ENDEREÇO ===== */
+.conteudo .info-loja {
+    margin-top: -80px; /* Espaço após o logo */
+    padding: 10px;
+    background-color: none; /* Fundo semi-transparente */
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    animation: fadeIn 1s ease-out;
+}
+
+.conteudo .info-loja p {
+    font-weight: bold;
+    color: #4b00ff;
+    font-size: 15px
+}
+
+/* Destaque para informações importantes */
+.conteudo .info-loja p:first-child {
+    font-weight: bold;
+    color: #4b00ff;
+    font-size: 20px;
+}
+
+/* Efeito de animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
