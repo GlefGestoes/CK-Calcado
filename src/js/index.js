@@ -254,3 +254,56 @@ document.querySelectorAll('.menu-categorias button').forEach(button => {
         startAudio(); // Garante que o áudio toque
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const botaoSocial = document.getElementById('botaoSocial');
+    const icones = document.querySelectorAll('.icone-link');
+    let currentIndex = 0;
+    let rotationInterval;
+    let isHovering = false;
+
+    // Inicia a rotação automática
+    function startRotation() {
+        rotationInterval = setInterval(() => {
+            if (!isHovering) {
+                rotateIcons();
+            }
+        }, 2000); // Muda a cada 2 segundos
+    }
+
+    // Rotaciona os ícones
+    function rotateIcons() {
+        // Esconde o ícone atual
+        icones[currentIndex].style.opacity = '0';
+        icones[currentIndex].style.transform = 'rotateY(180deg)';
+        
+        // Avança para o próximo ícone
+        currentIndex = (currentIndex + 1) % icones.length;
+        
+        // Mostra o novo ícone
+        icones[currentIndex].style.opacity = '1';
+        icones[currentIndex].style.transform = 'rotateY(0deg)';
+    }
+
+    // Eventos de hover
+    botaoSocial.addEventListener('mouseenter', function() {
+        isHovering = true;
+        clearInterval(rotationInterval);
+    });
+
+    botaoSocial.addEventListener('mouseleave', function() {
+        isHovering = false;
+        startRotation();
+    });
+
+    // Clique nos ícones
+    icones.forEach(icone => {
+        icone.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(this.getAttribute('data-link'), '_blank');
+        });
+    });
+
+    // Inicia a animação
+    startRotation();
+});
