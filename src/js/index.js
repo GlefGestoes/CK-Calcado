@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostra rodapé por 3 segundos ao carregar
     setTimeout(function() {
         showRodape();
-        setTimeout(hideRodape, 9000);
+        setTimeout(hideRodape, 90000);
     }, 1000);
 });
 
