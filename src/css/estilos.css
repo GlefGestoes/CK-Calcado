@@ -364,7 +364,7 @@ main .categoria .imagem {
     -webkit-background-clip: text; /* Aplica gradiente apenas ao texto */
     background-clip: text;      /* Aplica gradiente apenas ao texto */
     color: transparent;         /* Texto transparente para mostrar gradiente */
-    animation: gradienteAnimation 2s ease infinite; /* Animação mais rápida */
+    animation: gradienteAnimation 8s ease infinite; /* Animação mais rápida */
     position: fixed;            /* Fixo na tela */
     bottom: -150px;             /* Escondido inicialmente */
     left: 0;                    /* Alinhado à esquerda */
@@ -372,7 +372,7 @@ main .categoria .imagem {
     background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
     padding: 15px 0;            /* Espaçamento interno */
     text-align: center;         /* Texto centralizado */
-    transition: bottom 0.4s ease, opacity 0.5s ease; /* Animações suaves */
+    transition: bottom 0.8s ease, opacity 0.9s ease; /* Animações suaves */
     z-index: 40;                /* Camada altíssima */
     opacity: 0;                 /* Invisível inicialmente */
 }
