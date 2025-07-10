@@ -123,62 +123,125 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Controle do rodapé
-document.addEventListener('DOMContentLoaded', function() {
+// Controle do cabeçalho móvel (apenas para mobile)
+function setupMobileHeader() {
+    if (window.innerWidth > 767) return;
+
     const body = document.body;
     const rodape = document.querySelector('.rodape');
-    const menuItems = document.querySelectorAll('.menu-item');
-    let rodapeTimeout; // Timer para esconder
-    const rodapeHideDelay = 800; // Tempo para esconder
+    
+    // Cria cabeçalho móvel como cópia do rodapé
+    if (rodape) {
+        const cabecalhoMobile = rodape.cloneNode(true);
+        cabecalhoMobile.classList.remove('rodape');
+        cabecalhoMobile.classList.add('cabecalho-mobile');
+        document.body.appendChild(cabecalhoMobile);
+        rodape.remove();
+    }
 
-    // Mostra/esconde ao rolar
+    const cabecalhoMobile = document.querySelector('.cabecalho-mobile');
+    if (!cabecalhoMobile) return;
+
+    let cabecalhoTimeout;
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    function showCabecalho() {
+        clearTimeout(cabecalhoTimeout);
+        body.classList.add('show-cabecalho-mobile');
+    }
+
+    function hideCabecalho() {
+        body.classList.remove('show-cabecalho-mobile');
+    }
+
     function handleScroll() {
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const pageHeight = document.documentElement.scrollHeight;
-        
-        // Se chegou perto do final, mostra
-        if (scrollPosition >= pageHeight - 100) {
-            showRodape();
-        } else if (!rodape.matches(':hover')) {
-            hideRodape(); // Esconde se não estiver com mouse em cima
+        const scrollPosition = window.scrollY;
+        if (scrollPosition <= 100) {
+            showCabecalho();
+        } else if (!cabecalhoMobile.matches(':hover')) {
+            hideCabecalho();
         }
     }
 
-    // Mostra quando mouse chega perto do rodapé
+    function handleMouseMove(e) {
+        if (e.clientY < 50) {
+            showCabecalho();
+        }
+    }
+
+    function handleCabecalhoLeave() {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > 100) {
+            cabecalhoTimeout = setTimeout(hideCabecalho, 800);
+        }
+    }
+
+    // Configura eventos
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    cabecalhoMobile.addEventListener('mouseenter', showCabecalho);
+    cabecalhoMobile.addEventListener('mouseleave', handleCabecalhoLeave);
+    
+    document.addEventListener('click', function(e) {
+        if (!cabecalhoMobile.contains(e.target)) {
+            hideCabecalho();
+        }
+    });
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            setTimeout(hideCabecalho, 100);
+        });
+    });
+
+    // Mostra inicialmente por 3 segundos
+    setTimeout(function() {
+        showCabecalho();
+        setTimeout(hideCabecalho, 3000);
+    }, 2000);
+}
+
+// Controle do rodapé (apenas para desktop)
+function setupDesktopFooter() {
+    if (window.innerWidth <= 767) return;
+
+    const body = document.body;
+    const rodape = document.querySelector('.rodape');
+    if (!rodape) return;
+
+    let rodapeTimeout;
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    function showRodape() {
+        clearTimeout(rodapeTimeout);
+        body.classList.add('show-rodape');
+    }
+
+    function hideRodape() {
+        body.classList.remove('show-rodape');
+    }
+
+    function handleScroll() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+        if (scrollPosition >= pageHeight - 100) {
+            showRodape();
+        } else if (!rodape.matches(':hover')) {
+            hideRodape();
+        }
+    }
+
     function handleMouseMove(e) {
         if (window.innerHeight - e.clientY < 50) {
             showRodape();
         }
     }
 
-    // Mostra o rodapé
-    function showRodape() {
-        clearTimeout(rodapeTimeout); // Cancela timer de esconder
-        body.classList.add('show-rodape');
-    }
-
-    // Esconde o rodapé
-    function hideRodape() {
-        if (body.classList.contains('show-rodape')) {
-            body.classList.remove('show-rodape');
-        }
-    }
-
-    // Esconde depois de um tempo quando mouse sai
-    function handleRodapeMouseLeave() {
+    function handleRodapeLeave() {
         const scrollPosition = window.scrollY + window.innerHeight;
         const pageHeight = document.documentElement.scrollHeight;
-        
-        // Só esconde se não estiver no final
         if (scrollPosition < pageHeight - 100) {
-            rodapeTimeout = setTimeout(hideRodape, rodapeHideDelay);
-        }
-    }
-
-    // Esconde ao clicar fora
-    function handleDocumentClick(e) {
-        if (!rodape.contains(e.target)) {
-            hideRodape();
+            rodapeTimeout = setTimeout(hideRodape, 800);
         }
     }
 
@@ -186,21 +249,54 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
     rodape.addEventListener('mouseenter', showRodape);
-    rodape.addEventListener('mouseleave', handleRodapeMouseLeave);
-    document.addEventListener('click', handleDocumentClick);
+    rodape.addEventListener('mouseleave', handleRodapeLeave);
     
-    // Esconde rodapé ao mudar de categoria
+    document.addEventListener('click', function(e) {
+        if (!rodape.contains(e.target)) {
+            hideRodape();
+        }
+    });
+
     menuItems.forEach(item => {
         item.addEventListener('click', function() {
             setTimeout(hideRodape, 100);
         });
     });
 
-    // Mostra rodapé por 3 segundos ao carregar
+    // Mostra inicialmente por 3 segundos
     setTimeout(function() {
         showRodape();
         setTimeout(hideRodape, 90000);
     }, 1000);
+}
+
+// Inicialização separada para não interferir com o áudio
+document.addEventListener('DOMContentLoaded', function() {
+    // Configura o controle de áudio primeiro (mantenha seu código original)
+    const audio = document.getElementById('bgMusic');
+    let audioStarted = false;
+
+    function startAudio() {
+        if (audioStarted) return;
+        audio.play().then(() => {
+            audioStarted = true;
+        }).catch(error => console.log("Erro ao reproduzir:", error));
+    }
+
+    document.addEventListener('click', (event) => {
+        const isInteractiveElement = (
+            event.target.tagName !== 'SCRIPT' && 
+            event.target.tagName !== 'META' &&
+            !event.target.classList.contains('evitar-audio')
+        );
+        if (isInteractiveElement) startAudio();
+    }, { once: true });
+
+    document.addEventListener('touchstart', startAudio, { once: true, passive: true });
+
+    // Depois configura os elementos de rodapé/cabeçalho
+    setupMobileHeader();
+    setupDesktopFooter();
 });
 
 // Botões de compra
